@@ -1,2 +1,2 @@
 # ReactJS-Fundamentals
-ReactsJS Simple Projects and learning
+Building some React Projects for learning purpose.
