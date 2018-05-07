@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Person from './components/Person/Person';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,10 @@ class App extends Component {
       ],
       showPersons: true
     }
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleDeletePerson = this.handleDeletePerson.bind(this);
+    this.togglePersons = this.togglePersons.bind(this);
   }
 
   togglePersons() {
@@ -47,37 +52,21 @@ class App extends Component {
   }
 
   render() {
-    const btnStyle = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    }
-
     let persons = null;
 
     if (this.state.showPersons) {
       persons = (
-        <div>
-          {this.state.persons.map((p) => {
-            return <Person
-              name={p.name}
-              age={p.age}
-              key={p.id}
-              changed={(event) => this.handleNameChange(event, p.id)}
-              deleted={() => this.handleDeletePerson(p.id)} />
-          })}
-        </div>
+        <Persons
+          persons={this.state.persons}
+          changed={this.handleNameChange}
+          deleted={this.handleDeletePerson}
+         />
       )
-
-      btnStyle.backgroundColor = 'red';
     }
 
     return (
       <div className="App">
-        <button style={btnStyle} onClick={this.togglePersons.bind(this)}>Toggle Persons</button>
+        <Cockpit toggle={this.togglePersons} showPersons={this.state.showPersons} />
         {persons}
       </div>
     );
