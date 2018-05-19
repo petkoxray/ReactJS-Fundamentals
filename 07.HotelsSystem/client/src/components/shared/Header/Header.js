@@ -6,6 +6,9 @@ const header = ({ loggedIn, onLogout }) => {
         <header>
             <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
                 <NavLink exact to="/" className="navbar-brand">Hotel System</NavLink>
+                <ul className="navbar-nav">
+                    {loggedIn && <NavLink exact to="/create" className="nav-link">Add Hotel</NavLink>}
+                </ul>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
                         {loggedIn && <a href="javascript:void(0)" className="nav-link" onClick={onLogout}>Logout</a>}

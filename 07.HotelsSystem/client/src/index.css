@@ -1,4 +1,17 @@
-body #root {
-  margin: 100px;
-  font-family: sans-serif;
+body {
+    margin: 0;
+    padding: 100px 0;
+    font-family: sans-serif;
+}
+
+.errorMessage {
+    color: red;
+}
+
+.pagination {
+    margin: 20px 0 ;
+}
+
+.mr-1 {
+    margin: 1em;
 }

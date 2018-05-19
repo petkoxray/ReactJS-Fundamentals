@@ -55,7 +55,7 @@ export default class RegisterPage extends Component {
                 <div>
                     <h3 className="errorMessage">{this.state.error.message}</h3>
                     {Object.keys(this.state.error.errors).map(k => {
-                        return <p style={{color: 'red'}} key={k}>{this.state.error.errors[k]}</p>;
+                        return <p style={{ color: 'red' }} key={k}>{this.state.error.errors[k]}</p>;
                     })}
                 </div>
             );
@@ -92,7 +92,7 @@ export default class RegisterPage extends Component {
                         onChange={this.onChangeHandler}
                         label="Repeat password"
                     />
-                    <input type="submit" className="btn btn-primary" value="Register" />
+                    <button type="submit" className="btn btn-primary">Register</button>
                 </form>
             </div>
         );

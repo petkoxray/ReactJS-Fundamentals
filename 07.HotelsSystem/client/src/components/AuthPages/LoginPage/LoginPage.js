@@ -66,7 +66,7 @@ export default class LoginPage extends Component {
                         onChange={this.onChangeHandler}
                         label="Password"
                     />
-                    <input type="submit" className="btn btn-primary" value="Login" />
+                    <button type="submit" className="btn btn-primary">Login</button>
                 </form>
             </div>
         );
